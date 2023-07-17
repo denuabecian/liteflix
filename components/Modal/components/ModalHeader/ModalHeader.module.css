@@ -1,0 +1,33 @@
+.modalHeader {
+  width: 100%;
+  background: #242424;
+  left: 0;
+  flex-direction: column;
+}
+
+.modalClose,
+.modalTitle,
+.modalHeader {
+  display: flex;
+}
+
+.modalClose {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  align-self: flex-end;
+  background: transparent;
+
+}
+
+.modalLogo,
+.modalTitle {
+  align-self: center;
+}
+
+.modalTitle {
+  letter-spacing: 4px;
+  color: #64EEBC;
+  font-size: 20px;
+  margin: 0;
+}

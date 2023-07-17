@@ -1,0 +1,108 @@
+.dropdown {
+  position: relative;
+  font-weight: 400;
+  margin: 64px 0 27px;
+  width: 100%;
+  justify-content: center;
+  z-index: 2;
+
+  @media screen and (min-width: 1024px) {
+    margin: 0 0 32px;
+    width: auto;
+  }
+}
+
+.dropdown,
+.dropdown .optionSelected,
+.dropdown .content,
+.dropdown .option {
+  display: flex;
+}
+
+.dropdown .optionSelected {
+  height: 18px;
+}
+
+.dropdown,
+.dropdown .optionButton {
+  color: white;
+  letter-spacing: 4px;
+}
+
+.dropdown .optionButton,
+.dropdown .arrow {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+
+.dropdown .optionSelected strong,
+.dropdown .arrow {
+  margin: 0 0 0 10px;
+}
+
+.dropdown .arrow {
+  padding: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dropdown .arrow.open {
+  transform: rotate(0);
+}
+
+.dropdown .arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown .content {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: absolute;
+  background: #242424;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 30px 24px 24px;
+  z-index: 1;
+  top: 32px;
+  right: 0;
+  min-width: 327px;
+  transition: all 0.05s ease-in-out;
+
+  @media screen and (min-width: 1024px) {
+    background: url("../../public/images/dropdown.svg");
+    min-width: 240px;
+    top: 20px;
+    right: -27px;
+  }
+}
+
+.dropdown .content.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+.dropdown .content.visible {
+  visibility: visible;
+  height: 112px;
+
+  @media screen and (min-width: 1024px) {
+    height: 102px;
+  }
+}
+
+.dropdown .optionSelected,
+.dropdown .option {
+  align-items: center;
+}
+
+.dropdown .option {
+  width: 100%;
+  justify-content: space-between;
+  height: 16px;
+}
+
+.dropdown .optionButton {
+  font-size: 16px;
+  text-transform: uppercase;
+}

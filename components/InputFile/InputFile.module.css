@@ -1,0 +1,27 @@
+.buttonFile {
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 4px;
+  font-size: 16px;
+  background: transparent;
+  justify-content: center;
+  border: 1px dashed #FFF;
+  width: 327px;
+  height: 81px;
+
+  @media screen and (min-width: 768px) {
+    width: 602px;
+    height: 100px;
+  }
+}
+
+.buttonFile img {
+  margin: 0 16px 0 0;
+}
+
+.inputFile {
+  display: none;
+}

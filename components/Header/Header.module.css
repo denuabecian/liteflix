@@ -1,0 +1,82 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.header {
+  padding: 24px 24px 0;
+  justify-content: space-between;
+  animation-duration: 6s;
+  animation-name: fadeIn;
+
+  @media screen and (min-width: 1024px) {
+    padding: 35px 0 0;
+  }
+}
+
+.header.withBackground {
+  background: #242424;
+}
+
+.header,
+.leftContainer,
+.rightContainer,
+.agregarButton {
+  display: flex;
+}
+
+.header,
+.rightContainer,
+.agregarButton {
+  align-items: center;
+}
+
+.agregarButton,
+.menu,
+.notification,
+.user {
+  cursor: pointer;
+}
+
+.agregarButton {
+  border: none;
+  background: transparent;
+  color: white;
+  letter-spacing: 4px;
+  font-size: 18px;
+  transition: opacity .2s ease-in-out;
+  
+  @media screen and (min-width: 1024px) {
+    margin: 0 0 0 64px;
+  }
+}
+
+.agregarButton.visible {
+  visibility: visible;
+}
+
+.agregarButton.hidden {
+  visibility: hidden;
+}
+
+.agregarButton:hover {
+  opacity: .5;
+}
+
+.header .plus {
+  margin: 0 16px 0 0;
+}
+
+.menu,
+.notification {
+  margin: 0 40px 0 0;
+}

@@ -1,0 +1,79 @@
+.loadingBar,
+.loadingBar .progressBar {
+  display: flex;
+}
+
+.loadingBar {
+  flex-direction: column;
+}
+
+.loadingBar .progressBar {
+  align-items: center;  
+}
+
+.loadingBar .loading,
+.loadingBar .cancel {
+  color: #FFF;
+}
+
+.loadingBar .cancel {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.loadingBar .loading,
+.loadingBar .cancel,
+.loadingBar .loadingReady {
+  letter-spacing: 4px;
+}
+
+.loadingBar .loading {
+  align-self: self-start;
+  font-size: 14px;
+  margin: 0 0 16px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.loadingBar .cancel,
+.loadingBar .loadingReady {
+  font-size: 16px;
+  margin: 16px 0 0;
+  align-self: flex-end;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.loadingBar .progressBar {
+  width: 327px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.50);
+
+  @media screen and (min-width: 768px) {
+    width: 602px;
+  }
+}
+
+.loadingBar .bar {
+  background: #64EEBC;
+  height: 8px;
+  transition: all 0.3s ease-in-out;
+
+  @media screen and (min-width: 768px) {
+    height: 10px;
+  }
+}
+
+.loadingBar .loadingReady {
+  text-align: right;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: #64EEBC;
+}
