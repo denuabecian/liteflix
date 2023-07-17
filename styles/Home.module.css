@@ -1,0 +1,192 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sizeScale {
+  from {
+    background-size: 130%;
+  }
+
+  to {
+    background-size: 90%;
+  }
+}
+
+.layout {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 70px);
+  animation-duration: 25s;
+  animation-name: sizeScale;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  @media screen and (min-width: 578px) {
+    height: 100vh;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    padding: 0 104px;
+  }
+}
+
+.layout.withoutScroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content,
+.destacada,
+.otrasPeliculas,
+.buttons,
+.reproducirButton,
+.miListaButton {
+  display: flex;
+}
+
+.content,
+.destacada,
+.otrasPeliculas,
+.buttons {
+  flex-direction: column;
+}
+
+.content,
+.otrasPeliculas,
+.buttons,
+.reproducirButton,
+.miListaButton  {
+  align-items: center;
+}
+
+.content,
+.buttons {
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+.content {
+  text-align: center;
+  justify-content: flex-end;
+  background: linear-gradient(180deg, transparent 30%, #242424 36%);
+  padding: 0 32px 52px;
+
+  @media screen and (min-width: 768px) {
+    background: linear-gradient(180deg, transparent 27%, #242424 50%);  
+  }
+
+  @media screen and (min-width: 653px) and (max-width: 915px) and (orientation: landscape) {
+    background: linear-gradient(180deg, transparent 0%, #242424 22%);
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: calc(100vh - 75px);
+    text-align: left;
+    justify-content: space-between;
+    background: transparent;
+    padding: 0;
+  }
+}
+
+.destacada {
+  height: calc(100vh - 110px);
+  align-self: center;
+  justify-content: flex-end;
+
+  @media screen and (min-width: 653px) and (max-width: 915px) and (orientation: landscape) {
+    height: 100vh;
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: auto;
+    margin: 0 0 162px;
+    align-self: flex-end;
+    justify-content: unset;
+  }
+}
+
+.destacada .span {
+  font-size: 20px;
+  animation-duration: 1s;
+  animation-name: fadeIn;
+}
+
+.destacada .span,
+.reproducirButton,
+.miListaButton {
+  color: white;
+  letter-spacing: 4px;
+}
+
+.destacada .title {
+  color: #64EEBC;
+  margin: 16px 0;
+  font-size: 76px;
+  font-weight: 700;
+  letter-spacing: 12px;
+  line-height: 77.5px;
+  animation-duration: 2s;
+  animation-name: fadeIn;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 120px;
+    letter-spacing: 16px;
+    line-height: 100px;
+    margin: 24px 0 32px;
+  }
+}
+
+.reproducirButton,
+.miListaButton {
+  justify-content: center;
+  width: 248px;
+  height: 56px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity .2s ease-in-out;
+}
+
+.miListaButton:hover,
+.reproducirButton:hover  {
+  opacity: .5;
+}
+
+.reproducirButton img,
+.miListaButton img {
+  margin: 0 12px 0 0;
+}
+
+.reproducirButton {
+  border: none;
+  background: #242424;
+  animation-duration: 4s;
+  animation-name: fadeIn;
+}
+
+.miListaButton {
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  background: rgba(36, 36, 36, 0.50);
+  margin: 16px 0 0;
+
+  @media screen and (min-width: 1024px) {
+    margin: 0 0 0 24px;
+  }
+}
+
+.miListaButton,
+.otrasPeliculas {
+  animation-duration: 5s;
+  animation-name: fadeIn;
+}
