@@ -22,6 +22,42 @@
   }
 }
 
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+@keyframes fadeInSlideRight {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
 .layout {
   background-position: center;
   background-size: cover;
@@ -38,6 +74,7 @@
   
   @media screen and (min-width: 1024px) {
     padding: 0 104px;
+    overflow: hidden;
   }
 }
 
@@ -119,8 +156,7 @@
 
 .destacada .span {
   font-size: 20px;
-  animation-duration: 1s;
-  animation-name: fadeIn;
+  animation-duration: 2s;
 }
 
 .destacada .span,
@@ -137,8 +173,7 @@
   font-weight: 700;
   letter-spacing: 12px;
   line-height: 77.5px;
-  animation-duration: 2s;
-  animation-name: fadeIn;
+  animation-duration: 4s;
 
   @media screen and (min-width: 1024px) {
     font-size: 120px;
@@ -171,8 +206,7 @@
 .reproducirButton {
   border: none;
   background: #242424;
-  animation-duration: 4s;
-  animation-name: fadeIn;
+  animation-duration: 5s;
 }
 
 .miListaButton {
@@ -185,8 +219,23 @@
   }
 }
 
+.destacada span,
+.destacada .title,
+.reproducirButton,
 .miListaButton,
 .otrasPeliculas {
-  animation-duration: 5s;
+  animation-name: fadeInSlideUp;
+}
+
+.miListaButton,
+.otrasPeliculas {
+  animation-duration: 6s;
+}
+
+.otrasPeliculas {
   animation-name: fadeIn;
+
+  @media screen and (min-width: 1024px) {
+    animation-name: fadeInSlideRight;
+  }
 }
