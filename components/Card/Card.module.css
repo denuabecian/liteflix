@@ -1,0 +1,170 @@
+@keyframes fromTopToBottom {
+  from {
+    background-position: top;
+  }
+
+  to {
+    background-position: bottom;
+  }
+}
+
+.card,
+.card .gradient,
+.emptyCard {
+  width: 327px;
+  height: 172px;
+  border-radius: 4px;
+  background-position: center;
+  background-size: cover;
+  margin: 0 0 20px;
+  padding: 16px;
+  animation-duration: 10s;
+  animation-name: fromTopToBottom;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  @media screen and (min-width: 1024px) {
+    width: 220px;
+    height: 146px;
+  }
+}
+
+.card .gradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+  position: absolute;
+  z-index: 0;
+  transition: all 0.3s ease-in-out;
+  margin: -16px;
+  padding: 0;
+}
+
+.card:hover .gradient {
+  background: rgba(36, 36, 36, 0.70);
+}
+
+.emptyCard {
+  border: 1px dashed #FFF;
+}
+
+.card .idle,
+.card .hover {
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  z-index: 1;
+}
+
+.card .hover {
+  align-items: flex-start;
+}
+
+.card,
+.card .title,
+.card .hover .hoverTitle {
+  color: white;
+}
+
+.card,
+.card .button,
+.card .buttonHover,
+.card .hover .hoverTitle {
+  cursor: pointer;
+}
+
+.card:last-child,
+.emptyCard:last-child {
+  margin: 0;
+}
+
+.card .button,
+.card .buttonHover,
+.card .hover .button {
+  background: transparent;
+  border: none;
+}
+
+.card .idle,
+.card .title,
+.card .hover,
+.card .hover .playWithTitle,
+.card .hover .hoverTitle,
+.card .hover .filmData {
+  width: 100%;
+}
+
+.card .title {
+  text-align: center;
+  margin: 24px 0 0;
+}
+
+.card .title,
+.card .hover .hoverTitle {
+  letter-spacing: 4px;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  @media screen and (min-width: 1024px) {
+    max-width: 200px;
+  }
+}
+
+.card .hover .hoverTitle {
+  max-width: 258px;
+  line-height: 15px;
+  margin: 0 0 0 12px;
+
+  @media screen and (min-width: 1024px) {
+    max-width: 178px;
+    margin: 0 0 0 10px;
+  }
+}
+
+.card:hover .idle,
+.card .hover,
+.card .button:hover,
+.card .buttonHover {
+  display: none;
+}
+
+.card,
+.emptyCard,
+.card:hover .hover,
+.card .idle,
+.card .hover .playWithTitle,
+.card .button:hover ~ .buttonHover,
+.card .hover .filmData,
+.card .hover .filmData .stars {
+  display: flex;
+}
+
+.card,
+.emptyCard,
+.card .idle,
+.card .hover .playWithTitle,
+.card .hover .filmData,
+.card .hover .filmData .stars {
+  align-items: center;
+}
+
+.card button {
+  padding: 0;
+}
+
+.card .hover .filmData {
+  justify-content: space-between;
+  margin: 27px 0 0;
+  font-size: 14px;
+  line-height: 12px;
+  letter-spacing: 2px;
+
+  @media screen and (min-width: 1024px) {
+    margin: 23px 0 0;
+  }
+}
+
+.card .hover .filmData .vote {
+  margin: 0 0 0 6px;
+}
