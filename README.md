@@ -6,19 +6,18 @@ Se compartió un Notion y un Figma con todas las indicaciones para desarrollar u
 
 ## Tecnologías utilizadas
 
-NextJS, JavaScript, React, React Query, Supabase y Vercel.
+Next.js, JavaScript, React, React Query, Supabase y Vercel.
 
-## Iniciar
+## Acceso
 
-### `npm start`
-
-Levanta la web para desarrolladores.
-Abrir [http://localhost:3000](http://localhost:3000) para visualizar el proyecto.
+Abrir [https://liteflix-gamma.vercel.app/](https://liteflix-gamma.vercel.app/) para visualizar el proyecto.
 
 ## Comentarios
 
-- Decidí trabajar con Pull Requests dentro de Github para simular el proceso de desarrollo.
+- Decidí trabajar con Pull Requests + Conventional Commits dentro de Github para simular el proceso de desarrollo.
 - Trabajé con componentes para poder reutilizar código dentro de las secciones.
+- Creé un Hook llamado window-size para determinar cuándo el usuario se encuentra en un dispositivo mobile o no para así ajustar el diseño.
+- Decidí trabajar con uuid en los nombres de las imágenes para mantener únicos los archivos en el bucket (se puede subir archivos con el mismo nombre).
 
 Cualquier duda o comentario estoy a su disposición.
 

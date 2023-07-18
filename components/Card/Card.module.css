@@ -8,6 +8,24 @@
   }
 }
 
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
 .card,
 .card .gradient,
 .emptyCard {
@@ -44,6 +62,10 @@
 
 .emptyCard {
   border: 1px dashed #FFF;
+}
+
+.card {
+  position: relative;
 }
 
 .card .idle,
@@ -115,6 +137,7 @@
   max-width: 258px;
   line-height: 15px;
   margin: 0 0 0 12px;
+  text-align: left;
 
   @media screen and (min-width: 1024px) {
     max-width: 178px;
@@ -124,7 +147,7 @@
 
 .card:hover .idle,
 .card .hover,
-.card .button:hover,
+.card .hover .buttonsContainer:hover .button,
 .card .buttonHover {
   display: none;
 }
@@ -134,7 +157,8 @@
 .card:hover .hover,
 .card .idle,
 .card .hover .playWithTitle,
-.card .button:hover ~ .buttonHover,
+.card .hover .buttonsContainer,
+.card .buttonsContainer:hover .buttonHover,
 .card .hover .filmData,
 .card .hover .filmData .stars {
   display: flex;
@@ -144,13 +168,33 @@
 .emptyCard,
 .card .idle,
 .card .hover .playWithTitle,
+.card .hover .buttonsContainer,
 .card .hover .filmData,
 .card .hover .filmData .stars {
   align-items: center;
 }
 
+.card .hover .buttonsContainer {
+  width: 24px;
+  height: 24px;
+}
+
 .card button {
   padding: 0;
+}
+
+.card .buttonHover img {
+  width: auto;
+  height: auto;
+}
+
+.card .hover .playWithTitle,
+.card .hover .filmData {
+  animation-name: fadeInSlideUp;
+}
+
+.card .hover .playWithTitle {
+  animation-duration: 0.5s;
 }
 
 .card .hover .filmData {
@@ -159,6 +203,7 @@
   font-size: 14px;
   line-height: 12px;
   letter-spacing: 2px;
+  animation-duration: 1s;
 
   @media screen and (min-width: 1024px) {
     margin: 23px 0 0;

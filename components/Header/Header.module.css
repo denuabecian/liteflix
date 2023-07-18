@@ -15,7 +15,7 @@
 .header {
   padding: 24px 24px 0;
   justify-content: space-between;
-  animation-duration: 6s;
+  animation-duration: 2s;
   animation-name: fadeIn;
 
   @media screen and (min-width: 1024px) {
@@ -54,6 +54,7 @@
   letter-spacing: 4px;
   font-size: 18px;
   transition: opacity .2s ease-in-out;
+  padding: 0;
   
   @media screen and (min-width: 1024px) {
     margin: 0 0 0 64px;
