@@ -71,15 +71,15 @@ export default function Modal({ isModalOpen, setIsModalOpen, refetch }) {
               <span className={styles.uploadedTitle}>¡Felicitaciones!</span>
               <span className={styles.uploadedText}>{filmTitle} fue correctamente subida.</span>
             </div>
-            <Button className={styles.subirButton} onClick={onClose} text="Ir a Home" />
+            <Button className={styles.irAHomeButton} onClick={onClose} text="Ir a Home" />
           </>
         ) : (
           <form className={styles.form} onSubmit={handleSubmit}>
             <UploadFile inputRef={inputRef} step={step} setStep={setStep} progressBarPercentage={progressBarPercentage} setProgressBarPercentage={setProgressBarPercentage} filmPoster={filmPoster} setFilmPoster={setFilmPoster} />
             <input name="title" type="text" placeholder="Título" className={styles.inputText} onChange={e => setFilmTitle(e.target.value)} />
             <div className={styles.buttons}>
-              <Button type="submit" disabled={filmPoster === '' || filmTitle === '' || step !== 1 || progressBarPercentage !== "100%"} className={styles.subirButton} text={isLoading ? "Subiendo..." : "Subir Película"} />
-              {isMobile && (<Button type="button" className={styles.salirButton} onClick={onClose} text="Salir" />)}
+              <Button type="submit" disabled={filmPoster === '' || filmTitle === '' || step !== 1 || progressBarPercentage !== "100%" || isLoading} className={styles.subirButton} text="Subir Película" isLoading={isLoading} />
+              {isMobile && (<Button type="button" className={styles.salirButton} onClick={onClose} text="Salir" disabled={isLoading} />)}
             </div>
           </form>
         )}

@@ -1,6 +1,6 @@
 .modalBackdrop {
   height: 100vh;
-  z-index: 1;
+  z-index: 3;
   opacity: .5;
   position: fixed;
   top: 0;
@@ -16,11 +16,11 @@
 .modal {
   padding: 24px 24px 48px;
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   top: 63px;
   height: calc(100vh - 63px);
   overflow: hidden;
-  gap: 12%;
+  justify-content: center;
 
   @media screen and (min-width: 768px) {
     transition: all 0.5s ease-in-out;
@@ -30,6 +30,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    justify-content: space-between;
   }
 }
 
@@ -63,18 +64,19 @@
   visibility: visible;
 }
 
-.modal,
 .modal .form {
-  justify-content: space-between;
-}
+  margin: 72px 0 0;
 
-.modal .form {
-  height: 100%;
+  @media screen and (min-width: 768px) {
+    height: 100%;
+    margin: 48px 0 0;
+  }
 }
 
 .inputText,
 .modal .subirButton,
-.modal .salirButton {
+.modal .salirButton,
+.modal .irAHomeButton {
   border: none;
   outline: none;
 }
@@ -82,6 +84,7 @@
 .modal .inputText,
 .modal .subirButton,
 .modal .salirButton,
+.modal .irAHomeButton,
 .modal .uploaded .uploadedTitle,
 .modal .uploaded .uploadedText {
   letter-spacing: 4px;
@@ -89,7 +92,8 @@
 
 .inputText,
 .modal .subirButton,
-.modal .salirButton {
+.modal .salirButton,
+.modal .irAHomeButton {
   width: 248px;
 }
 
@@ -98,16 +102,27 @@
   border-bottom: 1px solid #FFF;
   font-size: 16px;
   background: transparent;
+  margin: 67px 0 96px;
+
+  @media screen and (min-width: 768px) {
+    margin: 48px 0;
+  }
+}
+
+.modal button:hover {
+  opacity: .5;
 }
 
 .modal .subirButton,
-.modal .salirButton {
+.modal .salirButton,
+.modal .irAHomeButton {
   font-size: 18px;
   height: 56px;
   cursor: pointer;
 }
 
-.modal .subirButton {
+.modal .subirButton,
+.modal .irAHomeButton {
   color: #242424;
   background: #FFF;
 }
@@ -121,6 +136,14 @@
   border: 1px solid rgba(255, 255, 255, 0.50);
   background: rgba(36, 36, 36, 0.50);
   margin: 24px 0 0;
+}
+
+.modal .irAHomeButton {
+  margin: 133px 0 0;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
 }
 
 .modal .uploaded .uploadedTitle {
